@@ -22,29 +22,29 @@ class CustomTextField extends StatelessWidget {
       onChanged: function,
       decoration: InputDecoration(
         labelText: label,
-        labelStyle: TextStyle(
+        labelStyle: const TextStyle(
           fontSize: 20,
           color: Colors.amber,
         ),
-        enabledBorder: OutlineInputBorder(
+        enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             color: Colors.amber,
             width: 1,
           ),
         ),
-        focusedBorder: OutlineInputBorder(
+        focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             color: Colors.amber,
             width: 2,
           ),
         ),
         prefixText: "$prefix ",
-        prefixStyle: TextStyle(
+        prefixStyle: const TextStyle(
           color: Colors.amber,
           fontSize: 20,
         ),
       ),
-      style: TextStyle(
+      style: const TextStyle(
         color: Colors.amber,
         fontSize: 20,
       ),

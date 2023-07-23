@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text("Conversor de Moedas"),
+        title: const Text("Conversor de Moedas"),
         backgroundColor: Colors.amber,
         centerTitle: true,
       ),
@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
           switch (snapshot.connectionState) {
             case ConnectionState.none:
             case ConnectionState.waiting:
-              return Center(
+              return const Center(
                 child: Text(
                   "Carregando dados",
                   style: TextStyle(
@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
               );
             default:
               if (snapshot.hasError) {
-                return Center(
+                return const Center(
                   child: Text(
                     "Erro ao carregar os dados",
                     style: TextStyle(
@@ -83,11 +83,11 @@ class _HomePageState extends State<HomePage> {
                 euro = snapshot.data!["results"]["currencies"]["EUR"]["buy"];
 
                 return SingleChildScrollView(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.monetization_on,
                         size: 150,
                         color: Colors.amber,
@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                         prefix: "R\$",
                         function: realChanged,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       CustomTextField(
@@ -107,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                         prefix: "US\$",
                         function: dolarChanged,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       CustomTextField(
