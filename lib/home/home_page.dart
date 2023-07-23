@@ -1,4 +1,4 @@
-import 'package:conversor_moedas/home/home_repository.dart';
+import 'package:conversor_moedas/services/api_service.dart';
 import 'package:conversor_moedas/home/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   double? dolar;
   double? euro;
 
-  final repository = HomeRepository();
+  final _api = ApiService();
 
   void realChanged(String text) {
     if (text.isEmpty) return;
@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
       body: FutureBuilder(
-        future: repository.getData(),
+        future: _api.getData(),
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.none:
